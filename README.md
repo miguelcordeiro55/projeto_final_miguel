@@ -21,7 +21,7 @@ Pense como foi criar com seus colegas de sala para ser algo divertido e facil de
 ---
 
 ## Divisão de tarefas
-** Quem ira ser responsavel por partes do projeto?
+** Quem ira ser responsavel por partes do projeto? arthur ficara responsavel pelas imagens, ariane, elis e clara ficaram respossivel pelo css, miguel e enzo vão cuidar do geral, kauan  e yury estão na parte de html.
 
 Não será escrito na pedra! Mas precisamos saber quem cuidou de cada parte e o "Segurar a cartolina" Não é parte das tarefas
 e sim todos devem pensar em como apresentar a continuação do outro.
