@@ -1,64 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="/css/style.css">
-<title>SportNova</title>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minha Loja</title>
+  <link rel="stylesheet" href="/css/styles.css" />
 </head>
-
 <body>
 
-<header class="header">
-    <div class="logo">SPORTNOVA</div>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="logo">Minha Loja</div>
+
     <nav class="menu">
-        <a href="#">Masculino</a>
-        <a href="#">Feminino</a>
-        <a href="#">Infantil</a>
-        <a href="#">Marcas</a>
-        <a href="#" class="promo">Outlet</a>
+      <div class="menu-item">
+        <a href="#">Home</a>
+        <div class="submenu">
+          <a href="#">Masculino</a>
+          <a href="#">Feminino</a>
+          <a href="#">Infantil</a>
+          <a href="#">Acessórios</a>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <a href="#">Produtos</a>
+        <div class="submenu">
+          <a href="#">Tênis</a>
+          <a href="#">Camisetas</a>
+          <a href="#">Calças</a>
+          <a href="#">Promoções</a>
+        </div>
+      </div>
+
+      <a href="#">Contato</a>
+
+      <div class="menu-item">
+        <a href="#">Carrinho 🛒</a>
+        <div class="submenu">
+          <a href="#">Ver Carrinho</a>
+          <a href="#">Finalizar Compra</a>
+        </div>
+      </div>
     </nav>
-    <div class="icons">
-        <span>🔍</span>
-        <span>❤</span>
-        <span>🛒</span>
-        <span>👤</span>
-    </div>
-</header>
+  </header>
 
-<section class="banner">
-    <h1>Performance que te move</h1>
-</section>
+  <!-- ===== MAIN ===== -->
+  <main>
 
-<section class="produtos">
-    <h2>Destaques</h2>
+    <!-- banner / imagem principal -->
+    <section class="banner">
+      <h1>Bem-vindo à Minha Loja</h1>
+    </section>
 
-    <div class="grid">
+    <!-- produtos em grade -->
+    <section class="produtos">
 
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <p class="nome">Nike Air Max Run</p>
-            <p class="preco">R$ 399 <span>R$ 549</span></p>
-            <button>Comprar</button>
-        </div>
+      <div class="produto-card">
+        <img src="/img/borough.png" alt="Tênis 1">
+        <h3>Denis</h3>
+        <p>R$ 299,90</p>
+        <button>Comprar</button>
+      </div>
 
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <p class="nome">Puma Essentials Tee</p>
-            <p class="preco">R$ 89 <span>R$ 129</span></p>
-            <button>Comprar</button>
-        </div>
+      <div class="produto-card">
+        <img src="/img/borough.png" alt="Tênis 2">
+        <h3>tenis</h3>
+        <p>R$ 349,90</p>
+        <button>Comprar</button>
+      </div>
 
-        <div class="card">
-            <img src="https://via.placeholder.com/300" alt="">
-            <p class="nome">Adidas Ultraboost 22</p>
-            <p class="preco">R$ 799 <span>R$ 999</span></p>
-            <button>Comprar</button>
-        </div>
+      <div class="produto-card">
+        <img src="/img/borough.png" alt="Tênis 3">
+        <h3>Produto 3</h3>
+        <p>R$ 199,90</p>
+        <button>Comprar</button>
+      </div>
 
-    </div>
-</section>
+      <div class="produto-card">
+        <img src="/img/borough.png" alt="Tênis 4">
+        <h3>Produto 4</h3>
+        <p>R$ 259,90</p>
+        <button>Comprar</button>
+      </div>
 
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <p>© 2025 Minha Loja</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
