@@ -176,3 +176,57 @@ body{
   .modal-body{ flex-direction:column; }
   .modal-body img{ width:100%; }
 }
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: white;
+  border: 1px solid #ddd;
+  padding: 8px 0;
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 10;
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropdown-menu button:hover {
+  background: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+
+.logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 80px; /* mesmo espaçamento grande da imagem */
+  margin: 20px 0 10px;
+}
+
+.brand-logo {
+  height: 90px;        /* altura maior como no design */
+  width: 150px;        /* largura fixa para padronizar */
+  object-fit: contain; /* mantém proporção */
+  filter: none;        /* imagem sem sombra */
+  background: none;    /* fundo limpo igual ao layout */
+  border-radius: 0;
+  padding: 0;
+}

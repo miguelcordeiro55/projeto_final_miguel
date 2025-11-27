@@ -10,10 +10,9 @@
   <div class="container">
     <header class="site-header">
       <div class="logo-row" aria-hidden="true">
-        <!-- substitua por: img/adidas.png, img/nike.png, img/puma.png -->
-        <img class="brand-logo" src="img/adidas.png" alt="Adidas (logo placeholder)">
-        <img class="brand-logo" src="img/nike.png"  alt="Nike (logo placeholder)">
-        <img class="brand-logo" src="img/puma.png"  alt="Puma (logo placeholder)">
+        <img class="brand-logo" src="/img/adidas.png" alt="Adidas (logo placeholder)">
+        <img class="brand-logo" src="/img/nike.png"  alt="Nike (logo placeholder)">
+        <img class="brand-logo" src="/img/puma.png"  alt="Puma (logo placeholder)">
       </div>
 
       <nav class="nav">
@@ -32,11 +31,56 @@
 
       <section class="controls" aria-label="Filtros">
         <div class="filters" role="toolbar">
+
           <button class="chip active" data-brand="all">Todas</button>
-          <button class="chip" data-brand="Adidas">Adidas</button>
-          <button class="chip" data-brand="Nike">Nike</button>
-          <button class="chip" data-brand="Puma">Puma</button>
+
+          <!-- ======================= -->
+          <!-- DROPDOWN ADIDAS -->
+          <!-- ======================= -->
+          <div class="dropdown">
+            <button class="chip" data-brand="Adidas">Adidas </button>
+            <div class="dropdown-menu">
+              <button data-brand="Adidas" data-category="chuteira">Chuteira</button>
+              <button data-brand="Adidas" data-category="camisa">Camisa</button>
+              <button data-brand="Adidas" data-category="bone">Boné</button>
+              <button data-brand="Adidas" data-category="conjuntos">Conjuntos</button>
+              <button data-brand="Adidas" data-category="tenis">Tênis</button>
+              <button data-brand="Adidas" data-category="acessorios">Acessórios</button>
+            </div>
+          </div>
+
+          <!-- ======================= -->
+          <!-- DROPDOWN NIKE -->
+          <!-- ======================= -->
+          <div class="dropdown">
+            <button class="chip" data-brand="Nike">Nike </button>
+            <div class="dropdown-menu">
+              <button data-brand="Nike" data-category="chuteira">Chuteira</button>
+              <button data-brand="Nike" data-category="camisa">Camisa</button>
+              <button data-brand="Nike" data-category="bone">Boné</button>
+              <button data-brand="Nike" data-category="conjuntos">Conjuntos</button>
+              <button data-brand="Nike" data-category="tenis">Tênis</button>
+              <button data-brand="Nike" data-category="acessorios">Acessórios</button>
+            </div>
+          </div>
+
+          <!-- ======================= -->
+          <!-- DROPDOWN PUMA -->
+          <!-- ======================= -->
+          <div class="dropdown">
+            <button class="chip" data-brand="Puma">Puma </button>
+            <div class="dropdown-menu">
+              <button data-brand="Puma" data-category="chuteira">Chuteira</button>
+              <button data-brand="Puma" data-category="camisa">Camisa</button>
+              <button data-brand="Puma" data-category="bone">Boné</button>
+              <button data-brand="Puma" data-category="conjuntos">Conjuntos</button>
+              <button data-brand="Puma" data-category="tenis">Tênis</button>
+              <button data-brand="Puma" data-category="acessorios">Acessórios</button>
+            </div>
+          </div>
+
         </div>
+
         <div class="search-wrap">
           <input id="search" placeholder="Buscar produto..." aria-label="Buscar produto">
         </div>
