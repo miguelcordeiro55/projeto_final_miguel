@@ -1,31 +1,34 @@
 <!doctype html>
-<!-- 
-incluindo o day-night;
-remover fundo da imagens;
-menu drop-down;
-falta o favicon;
-
--->
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Shop Multi-Brand — Demo</title>
-  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/style-dmode-manual.css" />
 </head>
+
 <body>
   <div class="container">
     <header class="site-header">
       <div class="logo-row" aria-hidden="true">
         <img class="brand-logo" src="/img/adidas.png" alt="Adidas (logo placeholder)">
-        <img class="brand-logo" src="/img/nike.png"  alt="Nike (logo placeholder)">
-        <img class="brand-logo" src="/img/puma.png"  alt="Puma (logo placeholder)">
+        <img class="brand-logo" src="/img/nike.png" alt="Nike (logo placeholder)">
+        <img class="brand-logo" src="/img/puma.png" alt="Puma (logo placeholder)">
       </div>
 
       <nav class="nav">
         <a href="#" class="nav-link">HOME</a>
         <a href="#shop" class="nav-link">SHOP</a>
         <a href="#about" class="nav-link">SOBRE</a>
+        <a href="#contact" class="nav-link">CONTATO</a>
+      </nav>
+
+      <!-- BOTÃO DO MODO ESCURO -->
+      <button id="toggleDark" class="dark-btn">🌙</button>
+    </header>
+
+    <main>
       <section class="hero">
         <h1>SHOP MULTI-BRAND</h1>
         <p class="lead">Produtos selecionados das principais marcas — tudo em um só lugar.</p>
@@ -33,7 +36,6 @@ falta o favicon;
 
       <section class="controls" aria-label="Filtros">
         <div class="filters" role="toolbar">
-
           <button class="chip active" data-brand="all">Todas</button>
 
           <!-- ======================= -->
@@ -51,9 +53,7 @@ falta o favicon;
             </div>
           </div>
 
-          <!-- ======================= -->
           <!-- DROPDOWN NIKE -->
-          <!-- ======================= -->
           <div class="dropdown">
             <button class="chip" data-brand="Nike">Nike </button>
             <div class="dropdown-menu">
@@ -66,9 +66,7 @@ falta o favicon;
             </div>
           </div>
 
-          <!-- ======================= -->
           <!-- DROPDOWN PUMA -->
-          <!-- ======================= -->
           <div class="dropdown">
             <button class="chip" data-brand="Puma">Puma </button>
             <div class="dropdown-menu">
@@ -80,7 +78,6 @@ falta o favicon;
               <button data-brand="Puma" data-category="acessorios">Acessórios</button>
             </div>
           </div>
-
         </div>
 
         <div class="search-wrap">
@@ -117,6 +114,7 @@ falta o favicon;
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="/js/script-dmode-manual.js"></script>
 </body>
+
 </html>

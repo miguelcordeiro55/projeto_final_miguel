@@ -1,4 +1,5 @@
 :root {
+  /* Variáveis do Modo Claro */
   --bg: #f6f6f7;
   --card: #ffffff;
   --muted: #6b6b6b;
@@ -7,15 +8,30 @@
   --gap: 20px;
   --maxw: 1200px;
   --shadow: 0 12px 30px rgba(16, 16, 16, 0.06);
+  --dropdown-bg: #ffffff;
+  --dropdown-border: rgba(0, 0, 0, 0.1);
+  --dropdown-hover: #f0f0f0;
+
+  /* Variáveis do Modo Escuro */
+  --dark-bg: #111;
+  --dark-card: #1a1a1a;
+  --dark-muted: #c9c9c9;
+  --dark-accent: #fff;
+  --dark-dropdown-bg: #222222;
+  --dark-dropdown-border: rgba(255, 255, 255, 0.1);
+  --dark-dropdown-hover: #333333;
 }
 
+/* ------------------- */
+/* Estilos Gerais & Base */
+/* ------------------- */
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 
 html,
 body {
-  height: 100%
+  height: 100%;
 }
 
 body {
@@ -25,8 +41,16 @@ body {
   color: var(--accent);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
+/* Ativação do Modo Escuro (Fundo do Body totalmente preto) */
+body.dark {
+  background: linear-gradient(180deg, var(--dark-bg) 0%, var(--dark-bg) 100%);
+  color: var(--dark-accent);
+}
+
+/* Container principal (Modo Claro) */
 .container {
   max-width: var(--maxw);
   margin: 36px auto;
@@ -34,9 +58,21 @@ body {
   border-radius: 22px;
   background: rgba(255, 255, 255, 0.9);
   box-shadow: var(--shadow);
+  transition: background 0.3s ease, box-shadow 0.3s ease, padding 0.3s ease; /* Adicionando transição */
 }
 
-/* header */
+/* Ajuste para o Modo Escuro: Remove o fundo, a sombra e o padding */
+body.dark .container {
+  background: transparent;
+  box-shadow: none;
+  padding: 0; 
+  /* Nota: O conteúdo dentro do container (como o Header e Hero) precisará de seu próprio padding interno
+     no Modo Escuro para não colar nas bordas. Se for o caso, me avise que ajustamos! */
+}
+
+/* ------------------- */
+/* Header */
+/* ------------------- */
 .site-header {
   display: flex;
   align-items: center;
@@ -59,6 +95,11 @@ body {
   background: transparent;
 }
 
+/* Logo no Modo Escuro: Inverte cores */
+body.dark .brand-logo {
+  filter: brightness(0) invert(1);
+}
+
 .nav {
   display: flex;
   gap: 18px;
@@ -71,7 +112,84 @@ body {
   letter-spacing: 0.8px;
 }
 
-/* hero */
+/* Link no Modo Escuro */
+body.dark .nav-link {
+  color: var(--dark-muted);
+}
+
+/* Botão de Dark Mode */
+.dark-btn {
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* Botão de Dark Mode no Modo Escuro */
+body.dark .dark-btn {
+  color: var(--dark-accent);
+}
+
+/* ------------------- */
+/* Dropdown */
+/* ------------------- */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background: var(--dropdown-bg);
+  border: 1px solid var(--dropdown-border);
+  padding: 8px 0;
+  border-radius: 6px;
+  min-width: 150px;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown Menu no Modo Escuro */
+body.dark .dropdown-menu {
+  background: var(--dark-dropdown-bg);
+  border: 1px solid var(--dark-dropdown-border);
+}
+
+.dropdown-menu button {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--accent);
+}
+
+/* Texto do Dropdown no Modo Escuro */
+body.dark .dropdown-menu button {
+  color: var(--dark-accent);
+}
+
+.dropdown-menu button:hover {
+  background: var(--dropdown-hover);
+}
+
+/* Hover do Dropdown no Modo Escuro */
+body.dark .dropdown-menu button:hover {
+  background: var(--dark-dropdown-hover);
+}
+
+/* Efeito principal para o dropdown funcionar com hover */
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+/* ------------------- */
+/* Hero (Catálogo) */
+/* ------------------- */
 .hero {
   text-align: center;
   padding: 26px 8px 10px;
@@ -88,7 +206,9 @@ body {
   color: var(--muted);
 }
 
-/* controls */
+/* ------------------- */
+/* Controles e Filtros */
+/* ------------------- */
 .controls {
   display: flex;
   align-items: center;
@@ -127,7 +247,9 @@ body {
   min-width: 200px;
 }
 
-/* grid */
+/* ------------------- */
+/* Cards e Grid */
+/* ------------------- */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -135,18 +257,22 @@ body {
   margin-top: 12px;
 }
 
-/* card */
 .card {
   background: var(--card);
   border-radius: var(--radius);
   padding: 18px;
   text-align: center;
   box-shadow: 0 8px 22px rgba(10, 10, 10, 0.05);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
   display: flex;
   flex-direction: column;
   gap: 12px;
   align-items: center;
-  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+/* Card no Modo Escuro */
+body.dark .card {
+  background: var(--dark-card);
 }
 
 .card:hover {
@@ -165,12 +291,23 @@ body {
   background: linear-gradient(180deg, #fafafa, #fff);
 }
 
+/* Mídia no Modo Escuro */
+body.dark .media {
+  background: #000;
+}
+
 .media img {
   max-width: 86%;
   max-height: 160px;
   object-fit: contain;
 }
 
+/* Imagem no Modo Escuro */
+body.dark .media img {
+  filter: brightness(0) invert(1);
+}
+
+/* Detalhes do Card */
 .card h3 {
   margin: 0;
   font-size: 16px;
@@ -211,7 +348,9 @@ body {
   border: none;
 }
 
-/* modal */
+/* ------------------- */
+/* Modal */
+/* ------------------- */
 .modal-backdrop {
   position: fixed;
   inset: 0;
@@ -229,6 +368,13 @@ body {
   border-radius: 14px;
   padding: 18px;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+/* Modal no Modo Escuro */
+body.dark .modal {
+  background: var(--dark-card);
+  color: var(--dark-accent);
 }
 
 .modal-close {
@@ -253,6 +399,12 @@ body {
   object-fit: contain;
 }
 
+/* Imagem do Modal no Modo Escuro */
+body.dark .modal-body img {
+  background: #000;
+  filter: brightness(0) invert(1);
+}
+
 .modal-info {
   flex: 1;
 }
@@ -263,7 +415,9 @@ body {
   margin-top: 6px;
 }
 
-/* footer */
+/* ------------------- */
+/* Footer */
+/* ------------------- */
 .site-footer {
   text-align: center;
   color: var(--muted);
@@ -271,8 +425,15 @@ body {
   font-size: 13px;
 }
 
-/* responsive */
-@media(max-width:860px) {
+/* Footer no Modo Escuro */
+body.dark .site-footer {
+  color: var(--dark-muted);
+}
+
+/* ------------------- */
+/* Responsividade */
+/* ------------------- */
+@media (max-width: 860px) {
   .hero h1 {
     font-size: 30px;
   }
@@ -288,64 +449,4 @@ body {
   .modal-body img {
     width: 100%;
   }
-}
-
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  background: white;
-  border: 1px solid #ddd;
-  padding: 8px 0;
-  border-radius: 6px;
-  min-width: 150px;
-  z-index: 10;
-}
-
-.dropdown-menu button {
-  display: block;
-  width: 100%;
-  padding: 8px 14px;
-  background: none;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-}
-
-.dropdown-menu button:hover {
-  background: #f0f0f0;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-
-.logo-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 80px;
-  /* mesmo espaçamento grande da imagem */
-  margin: 20px 0 10px;
-}
-
-.brand-logo {
-  height: 90px;
-  /* altura maior como no design */
-  width: 150px;
-  /* largura fixa para padronizar */
-  object-fit: contain;
-  /* mantém proporção */
-  filter: none;
-  /* imagem sem sombra */
-  background: none;
-  /* fundo limpo igual ao layout */
-  border-radius: 0;
-  padding: 0;
 }
